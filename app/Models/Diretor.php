@@ -9,7 +9,7 @@ class Diretor extends Model
 {
     use HasFactory;
     protected $fillable =  ['Nome', 'Biografia'];
-    public function fichaTecnica_Diretors(){
-      return $this->hasMany('App\Models\FichaTecnica_Diretor', 'Diretor_id');
+    public function fichaTecnica_diretors(){
+      return $this->hasMany('App\Models\FichaTecnicaDiretor', 'Diretor_id');
     }
 }

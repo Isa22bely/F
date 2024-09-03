@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('ficha_tecnica_roteiristas', function (Blueprint $table) {
              $table->bigIncrements('id');
-             $table->unsignedBigInteger('FichaTecnica_idFichaTecnica');
+             $table->unsignedBigInteger('FichaTecnica_id');
              $table->unsignedBigInteger('Roteirista_id');
-             $table->foreign('FichaTecnica_idFichaTecnica')->references('id')->on('ficha_tecnicas');
+             $table->foreign('FichaTecnica_id')->references('id')->on('ficha_tecnicas');
              $table->foreign('Roteirista_id')->references('id')->on('roteiristas');
              $table->timestamps();
         });

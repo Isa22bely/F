@@ -14,4 +14,4 @@ Route::get('/home', function () {
     return view('index');
 });
 
-Route::get('/filme', [App/Controllers\AutoresController::class, 'create'])->name('novoFilme');
+Route::get('/filme', [App\Http\Controllers\ControladorFilme::class, 'create'])->name('novoFilme');

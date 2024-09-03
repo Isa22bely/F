@@ -17,7 +17,7 @@
           <li class="nav-item"><a class="nav-link" href="#">
             <svg class="bi" width="24" height="24"><use xlink:href="#aperture"/></svg>
           </a></li>
-          <li class="nav-item"><a class="dropdown-item" href="{{route('novoAutor')}}">Cadastrar novo filme</a></li>
+          <li class="nav-item"><a class="dropdown-item" href="{{route('novoFilme')}}">Cadastrar novo filme</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Cadastrar roteirista</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Cadastrar ator</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Pesquisa</a></li>

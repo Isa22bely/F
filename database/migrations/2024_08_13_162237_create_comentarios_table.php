@@ -15,8 +15,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('Avaliacao');
             $table->string('Descricao');
-            $table->unsignedBigInteger('FichaTecnica_idFichaTecnica');
-            $table->foreign('FichaTecnica_idFichaTecnica')->references('id')->on('ficha_tecnicas');
+            $table->unsignedBigInteger('FichaTecnica_id');
+            $table->foreign('FichaTecnica_id')->references('id')->on('ficha_tecnicas');
             $table->timestamps();
         });
     }

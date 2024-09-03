@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class FichaTecnicaRoteirista extends Model
 {
     use HasFactory;
-    protected $fillable = ['Roteirista_id', 'FichaTecnica_idFichaTecnica'];
+    protected $fillable = ['Roteirista_id', 'FichaTecnica_id'];
     public function roteirista(){
         return $this->belongsTo('App\Models\Roteirista');
     }
-    public function fichaTecnica(){
+    public function ficha_tecnica(){
         return $this->belongsTo('App\Models\FichaTecnica');
     }
 }
