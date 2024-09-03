@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\FichaTecnica;
 use App\Models\Ator;
 use App\Models\Diretor;
-use App\Models\ClasificacaoIndicativa;
+use App\Models\ClaisificacaoIndicativa;
 use App\Models\Roteirista;
 use App\Models\FichaTecnicaDiretor;
 use App\Models\FichaTecnicaRoteiristra;
@@ -26,9 +26,9 @@ class ControladorFilme extends Controller
 
     public function index()
     {
-        $dados = FichaTecnica::with('claisificacao_indicativa')->get();    
+        $dados = FichaTecnica::with('claisificacao_indicativas')->get();    
      
-        return view('exibeFilmes', compact('dados'));
+        return view('exibeFilme', compact('dados'));
        
   
     }
@@ -38,8 +38,8 @@ class ControladorFilme extends Controller
      */
     public function create()
     {
-        $clasificacao_indicativa = Clasificacao_indicativa::all();
-        return view('novoFilme', compact('clasificacao_indicativa'));
+        $clasificacao_indicativa = ClaisificacaoIndicativa::all();
+        return view('novoFilme', compact('clasificacao_indicativas'));
     }
     
 
@@ -56,7 +56,7 @@ class ControladorFilme extends Controller
         $dados->IMDB= $request->input('imdb');
         $dados->Pais= $request->input('pais');
         $dados->Sinopse= $request->input('sinopse');
-        $dados->clasificacao_indicativa_id = $request->input('claisificacao_indicativa');
+        $dados->clasificacaoIndicativa_id = $request->input('claisificacao_indicativas');
         if($dados->save())
             return redirect('/filme')->with('success', 'Filme cadastrado com sucesso!!');
         return redirect('/filme')->with('danger', 'Erro ao cadastrar o Filme!');
@@ -79,7 +79,7 @@ class ControladorFilme extends Controller
         $dados = Filme::find($id);
         if(isset($dados)){
             $claisificacao_indicativa = Claisificacao_indicativa::all();
-            return view('editarFilme', compact('dados', 'claisificacao_indicativa'));
+            return view('editarFilme', compact('dados', 'claisificacao_indicativas'));
         }
     }
 
@@ -97,7 +97,7 @@ class ControladorFilme extends Controller
             $dados->IMDB= $request->input('imdb');
             $dados->Pais= $request->input('pais');
             $dados->Sinopse= $request->input('sinopse');
-            $dados->clasificacao_indicativa_id = $request->input('claisificacao_indicativa');
+            $dados->ClassificacaoIndicativa_id = $request->input('claisificacao_indicativas');
             $dados->save();
             return redirect('/filme')->with('success', 'Filme atualizado com sucesso!!');
         }else{
